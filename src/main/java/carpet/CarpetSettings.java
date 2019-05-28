@@ -58,12 +58,14 @@ public class CarpetSettings
     public static boolean b_movableTileEntities = false;
     public static boolean b_huskSpawningInTemples = false;
     public static boolean b_stackableShulkerBoxes = false;
+    public static float f_snowballDragonDamage = 0.0F;
 
     private static CarpetSettingEntry rule(String s1, String s2, String s3) { return CarpetSettingEntry.create(s1,s2,s3);}
     
     private static void set_defaults()
     {
         CarpetSettingEntry[] RuleList = new CarpetSettingEntry[] {
+                rule("snowballDragonDamage", "fix", "Changes snowball dragon damage"),
   rule("watchdogCrashFix", "fix", "Fixes server crashing supposedly on falling behind 60s in ONE tick, yeah bs.").
                                    extraInfo("Fixed 1.12 watchdog crash in 1.13 pre-releases, reintroduced with 1.13, GG."),
   rule("portalSuffocationFix",  "fix", "Nether portals correctly place entities going through")

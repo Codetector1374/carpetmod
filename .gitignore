@@ -5,3 +5,7 @@
 /ForgeGradle/
 /.idea/
 /out/
+
+*.iml
+*.ipr
+*.iws

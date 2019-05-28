@@ -1,0 +1,26 @@
+--- a/net/minecraft/entity/projectile/EntitySnowball.java
++++ b/net/minecraft/entity/projectile/EntitySnowball.java
+@@ -1,7 +1,11 @@
+ package net.minecraft.entity.projectile;
+ 
++import carpet.CarpetSettings;
+ import net.minecraft.entity.EntityLivingBase;
+ import net.minecraft.entity.EntityType;
++import net.minecraft.entity.IEntityMultiPart;
++import net.minecraft.entity.MultiPartEntityPart;
++import net.minecraft.entity.boss.EntityDragon;
+ import net.minecraft.entity.monster.EntityBlaze;
+ import net.minecraft.init.Particles;
+ import net.minecraft.util.DamageSource;
+@@ -50,6 +54,11 @@
+                 i = 3;
+             }
+ 
++            if (result.entity instanceof MultiPartEntityPart) {
++                if (((MultiPartEntityPart)result.entity).parent instanceof EntityDragon)
++                i = CarpetSettings.getInt("snowballDragonDamage");
++            }
++
+             result.entity.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), (float)i);
+         }
+ 
